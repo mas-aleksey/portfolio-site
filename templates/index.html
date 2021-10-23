@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Личный сайт - Алексея Матюнина</title>
+  <title>{{ context.title }}</title>
 
   <!-- Font Awesome Icons -->
   <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,7 +31,7 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
       <div>
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Матюнин Алексей</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">{{ context.fullname }}</a>
       </div>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -39,16 +39,26 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Обо мне</a>
+            <a class="nav-link navbar-text js-scroll-trigger" href="#about">{{ context.nav.profile }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Резюме</a>
+            <a class="nav-link navbar-text js-scroll-trigger" href="#services">{{ context.nav.cv }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Портфолио</a>
+            <a class="nav-link navbar-text js-scroll-trigger" href="#portfolio">{{ context.nav.projects }}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Контакты</a>
+          <li class="nav-item mr-5">
+            <a class="nav-link navbar-text js-scroll-trigger" href="#contact">{{ context.nav.contacts }}</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-2x fa-language"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% for lang in context.nav.language %}
+                  <a class="{{ lang.class }}" href="{{ lang.link }}">{{ lang.title }}</a>
+              {% endfor %}
+            </div>
           </li>
         </ul>
       </div>
@@ -61,12 +71,12 @@
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
           <img class="nav-logo_face mb-3" src="../static/img/face.jpeg">
-          <h1 class="text-white font-weight-bold">Все преодолимо,<br>когда у тебя есть цель!</h1>
+          <h1 class="text-white font-weight-bold">{{ context.promo.title|safe }}</h1>
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">Python Developer / Team lead с навыками Scrum Master.<br>Люблю работать в команде и выстраивать процессы по Agile.</p>
-          <a class="btn btn-primary mb-3 btn-xl js-scroll-trigger" href="#about">Узнать больше обо мне</a>
+          <p class="text-white-75 font-weight-light mb-5">{{ context.promo.subtitle|safe }}</p>
+          <a class="btn btn-primary mb-3 btn-xl js-scroll-trigger" href="#about">{{ context.promo.button }}</a>
         </div>
       </div>
     </div>
@@ -77,41 +87,34 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10 text-center">
-          <h2 class="text-white mt-0">Профессиональный опыт</h2>
+          <h2 class="text-white mt-0">{{ context.profile.title }}</h2>
           <hr class="divider my-4">
-          <p class="text-white-50 mb-4">Участник олимпиад ICPC 2010-2012. Работаю программистом с 2013 года. <br>Прошел путь от Junior до Senior Developer. Являюсь ментором для новых сотрудников.<br>Пишу чистый код и автотесты, используя TDD. </p>
+          <p class="text-white-50 mb-4">{{ context.profile.subtitle|safe }}</p>
         </div>
         <div class="row w-100 justify-content-center mb-5">
           <div class="col-lg-3 col-md-6 text-center">
             <div class="mt-5">
               <i class="fab fa-4x fa-python text-primary mb-4"></i>
-              <h3 class="h4 mb-2">Python 3.9</h3>
-              <p class="text-muted mb-0">Основной язык для работы. Раньше писал на C# C++</p>
+              <h3 class="h4 mb-2">{{ context.profile.python.title }}</h3>
+              <p class="text-muted mb-0">{{ context.profile.python.subtitle|safe }}</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="mt-5">
               <i class="fas fa-4x fa-code text-primary mb-4"></i>
-              <h3 class="h4 mb-2">> 7 лет опыта</h3>
-              <p class="text-muted mb-0">Военная часть с 2013<br>Сбербанк с 2019<br>Align Technology c 2021</p>
+              <h3 class="h4 mb-2">{{ context.profile.experience.title }}</h3>
+              <p class="text-muted mb-0">{{ context.profile.experience.subtitle|safe }}</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="mt-5">
               <i class="fas fa-4x fa-user-graduate text-primary mb-4"></i>
-              <h3 class="h4 mb-2">Прошел курсы</h3>
-              <p class="text-muted mb-0">Scrum Master (КУ Сбербанка) Middle Python (Яндекс)</p>
+              <h3 class="h4 mb-2">{{ context.profile.courses.title }}</h3>
+              <p class="text-muted mb-0">{{ context.profile.courses.subtitle|safe }}</p>
             </div>
           </div>
-          <!--<div class="col-lg-3 col-md-6 text-center">
-            <div class="mt-5">
-              <i class="fas fa-4x fa-users text-primary mb-4"></i>
-              <h3 class="h4 mb-2">Scrum Master</h3>
-              <p class="text-muted mb-0">Прошел обучение в КУ Сбербанка</p>
-            </div>
-          </div>-->
         </div>
-        <div class="row flex-column"><a class="btn btn-primary btn-xl js-scroll-trigger my-4" href="#services">Подробнее в резюме</a></div>
+        <div class="row flex-column"><a class="btn btn-primary btn-xl js-scroll-trigger my-4" href="#services">{{ context.profile.button }}</a></div>
       </div>
     </div>
   </section>
@@ -119,25 +122,25 @@
   <!-- Services Section -->
   <section class="page-section" id="services">
     <div class="container">
-      <h2 class="text-center mt-0">Резюме</h2>
+      <h2 class="text-center mt-0">{{ context.cv.title }}</h2>
       <hr class="divider my-4">
       <div class="row justify-content-center">
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
-            <a href="../static/matyunin-as.pdf" target="_blank">
+            <a href="{{ context.cv.cv_card.link }}" target="_blank">
               <i class="fas fa-4x fa-file-pdf text-primary mb-4"></i>
-              <h3 class="h4 mb-2">Скачать PDF</h3>
+              <h3 class="h4 mb-2">{{ context.cv.cv_card.title }}</h3>
             </a>
-            <p class="text-muted mb-0">Описание мест работы. И полная информация о себе!</p>
+            <p class="text-muted mb-0">{{ context.cv.cv_card.subtitle|safe }}</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
-            <a href="https://github.com/tiraill" target="_blank">
+            <a href="{{ context.cv.git_hub.link }}" target="_blank">
               <i class="fab fa-4x fa-github text-primary mb-4"></i>
-              <h3 class="h4 mb-2">Git Hub</h3>
+              <h3 class="h4 mb-2">{{ context.cv.git_hub.title }}</h3>
             </a>
-            <p class="text-muted mb-0">Мой профиль на GitHub.</p>
+            <p class="text-muted mb-0">{{ context.cv.git_hub.subtitle }}</p>
           </div>
         </div>
       </div>
@@ -152,12 +155,8 @@
           <a class="portfolio-box" href="https://github.com/tiraill/hdl" target="_blank">
             <img class="img-fluid" src="/static/img/portfolio/hdl.jpg" alt="">
             <div class="portfolio-box-caption">
-              <div class="project-name">
-                HDL Automation
-              </div>
-              <div class="project-category text-white-50 mt-4">
-                Сайт российского дистрибьютора устройств для "умного дома"<br>от международной компании HDL
-              </div>
+              <div class="project-name">{{ context.projects.hdl.title }}</div>
+              <div class="project-category text-white-50 mt-4">{{ context.projects.hdl.subtitle|safe }}</div>
             </div>
           </a>
         </div>
@@ -165,12 +164,8 @@
           <a class="portfolio-box" href="https://github.com/tiraill/agc-solutions" target="_blank">
             <img class="img-fluid" src="/static/img/portfolio/agc.jpg" alt="">
             <div class="portfolio-box-caption">
-              <div class="project-name">
-                AGC Solution
-              </div>
-              <div class="project-category text-white-50 mt-4">
-                  Компания по производству изделий из стекла и дизайну интерьеров
-              </div>
+              <div class="project-name">{{ context.projects.agc.title }}</div>
+              <div class="project-category text-white-50 mt-4">{{ context.projects.agc.subtitle|safe }}</div>
             </div>
           </a>
         </div>
@@ -183,9 +178,9 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Остаемся на связи!</h2>
+          <h2 class="mt-0">{{ context.contacts.title }}</h2>
           <hr class="divider my-4">
-          <p class="text-muted mb-5">Готовы начать сотрудничество со мной? Напишите мне в телеграм или отправьте email, я отвечу вам как можно скорее!</p>
+          <p class="text-muted mb-5">{{ context.contacts.subtitle|safe }}</p>
         </div>
       </div>
       <div class="row justify-content-center">
@@ -210,6 +205,9 @@
       </div>
     </div>
   </section>
+  <div class="container py-3">
+      <div class="text-center text-muted">{{ context.instagram }}</div></div>
+  </div>
   <div class="elfsight-app-049dd8d6-60a9-40d9-8a6f-c1add6b1f769"></div>
   <footer class="bg-light py-5">
     <div class="container">
