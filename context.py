@@ -47,7 +47,7 @@ CONTEXT = {
             'cv_card': {
                 'title': 'Скачать PDF',
                 'subtitle': 'Описание мест работы. И полная информация о себе!',
-                'link': '../static/matyunin-as.pdf'
+                'link': '../static/cv/in_russian.pdf'
             },
             'git_hub': {
                 'title': 'Git Hub',
@@ -111,7 +111,7 @@ CONTEXT = {
             'cv_card': {
                 'title': 'Download PDF',
                 'subtitle': 'Description of the places of work. And detailed information about yourself!',
-                'link': '../static/matyunin-as.pdf'
+                'link': '../static/cv/in_english.pdf'
             },
             'git_hub': {
                 'title': 'Git Hub',
