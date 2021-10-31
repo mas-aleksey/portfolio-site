@@ -86,20 +86,20 @@ CONTEXT = {
         },
         'promo': {
             'title': 'Everything is possible<br>when you have a purpose!',
-            'subtitle': 'Python Developer / Team lead with Scrum Master skills.<br>I like working in a team and build processes by Agile.',
+            'subtitle': 'Python Developer / Team lead with Scrum Master skills.<br>I like working in a team and build processes using Agile.',
             'button': 'Learn more about me'
         },
         'profile': {
             'title': 'Professional experience',
             'button': 'Read more in CV',
-            'subtitle': 'Participant Olympiad ICPC 2010-2012. I work as a developer since 2013.<br>He went from Junior to Senior Developer. I am a mentor for new employees.<br>I am writing a pure code and autotests using TDD. ',
+            'subtitle': 'Participant of ICPC 2010-2012 Olympiad. I work as a developer since 2013.<br>Went from Junior to Senior Developer. I am a mentor for new employees.<br>I write a pure code and autotests using TDD. ',
             'python': {
                 'title': 'Python 3.9',
-                'subtitle': 'Main language for work.<br>Used to use on C # C ++'
+                'subtitle': 'Main language for work.<br>Used to use C# C ++'
             },
             'experience': {
-                'title': '> 7 years experience',
-                'subtitle': 'Military service 2013<br>Sberbank 2019<br>Align Technology c 2021'
+                'title': '> 7 years of experience',
+                'subtitle': 'Military service 2013<br>Sberbank 2019<br>Align Technology 2021'
             },
             'courses': {
                 'title': 'Courses',
@@ -110,7 +110,7 @@ CONTEXT = {
             'title': 'CV',
             'cv_card': {
                 'title': 'Download PDF',
-                'subtitle': 'Description of the places of work. And detailed information about yourself!',
+                'subtitle': 'Description of the places of work. And detailed information about me!',
                 'link': '../static/cv/in_english.pdf'
             },
             'git_hub': {
@@ -131,7 +131,7 @@ CONTEXT = {
         },
         'contacts': {
             'title': 'Keep in touch!',
-            'subtitle': 'Are you ready to start working with me? Write to me in telegram or send an email, I will answer you as soon as possible!'
+            'subtitle': 'Are you ready to start working with me? Please contact me on telegram or send an email, I will reply you as soon as possible!'
         },
         'instagram': 'Follow me on Instagram'
     }
