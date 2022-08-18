@@ -34,8 +34,8 @@ CONTEXT = {
                 'subtitle': 'Основной язык для работы. Раньше писал на C# C++'
             },
             'experience': {
-                'title': '> 7 лет опыта',
-                'subtitle': 'Военная часть с 2013<br>Сбербанк с 2019<br>Align Technology c 2021'
+                'title': '> 8 лет опыта',
+                'subtitle': '...<br>Сбербанк с 2019<br>Align Technology c 2021<br>VK Cloud Solutions 2022'
             },
             'courses': {
                 'title': 'Прошел курсы',
@@ -98,8 +98,8 @@ CONTEXT = {
                 'subtitle': 'Main language for work.<br>Used to use C# C ++'
             },
             'experience': {
-                'title': '> 7 years of experience',
-                'subtitle': 'Military service 2013<br>Sberbank 2019<br>Align Technology 2021'
+                'title': '> 8 years of experience',
+                'subtitle': '...<br>Sberbank 2019<br>Align Technology 2021<br>VK Cloud Solutions 2022'
             },
             'courses': {
                 'title': 'Courses',
